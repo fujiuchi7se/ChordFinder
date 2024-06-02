@@ -14,12 +14,15 @@
   - 解釈を閲覧者が自由に書き込めると良い
 - ハーフディミニッシュや分数augなどの複雑なコードから曲を検索
 
-## 利用サイト
-- [ChordWiki](https://ja.chordwiki.org/)の予定
-
 ## フロントエンド
 - HTML
 - CSS
 
 ## バックエンド
 - Django (Python)
+
+## スクレイピング
+- Webサイト
+  - [u-fret](https://www.ufret.jp/)を使用
+- ライブラリ
+  - Selenium (予定)
