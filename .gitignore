@@ -1,0 +1,11 @@
+settings.py
+
+*.sqlite3
+*.pot
+*.log
+*.pyc
+
+myenv/
+__pycache__/
+db-volumes/
+.vscode/

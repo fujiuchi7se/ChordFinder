@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ song.song_title }}</title>
+</head>
+<body>
+    <h1>{{ song.song_title }}</h1>
+    <p>Singer: {{ song.singer }}</p>
+    <p>Key: {{ song.key }}</p>
+    <p>Progression:</p>
+    <pre>{{ song.progression }}</pre>
+    <a href="{{ song.url }}">Original page</a>
+    <br>
+    <a href="{% url 'song_list' song.key %}">Back to song list</a>
+</body>
+</html>

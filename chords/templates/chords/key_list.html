@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key List</title>
+</head>
+<body>
+    <h1>Keys</h1>
+    <ul>
+        {% for key in keys %}
+            <li><a href="{% url 'song_list' key %}">{{ key }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

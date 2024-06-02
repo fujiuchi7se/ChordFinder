@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Songs in {{ key }}</title>
+</head>
+<body>
+    <h1>Songs in {{ key }}</h1>
+    <ul>
+        {% for song in songs %}
+            <li><a href="{% url 'song_detail' song.id %}">{{ song.song_title }} - {{ song.singer }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'key_list' %}">Back to keys</a>
+</body>
+</html>
