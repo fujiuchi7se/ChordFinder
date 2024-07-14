@@ -17,12 +17,14 @@
 ## フロントエンド
 - HTML
 - CSS
+- JavaScript (予定)
 
 ## バックエンド
 - Django (Python)
 
 ## スクレイピング
 - Webサイト
-  - [u-fret](https://www.ufret.jp/)を使用
+  - [楽器me](https://gakufu.gakki.me/)
 - ライブラリ
-  - Selenium (予定)
+  - Requests
+  - Beautiful Soup4
