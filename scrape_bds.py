@@ -36,7 +36,7 @@ for i in range(120):
     chords = [c.text.strip('|>/--') for c in bs.find_all('span', class_='chord')]
     nchords = [re.sub(r'\(.*?\)', ' ', chord) for chord in chords if chord not in [' ', 'N.C.']]
     nchords = [chord for chord in nchords if chord.strip()]
-    nchords = nchords[:61]
+    nchords = nchords[:41]
     # データをリストに追加
     data.append([ntn(key), nchords])
 
