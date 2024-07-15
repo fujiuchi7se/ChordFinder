@@ -15,7 +15,7 @@ def ntn(note):
     return note_dict.get(note, note)
 
 # コード進行を合計文字数が100文字以下になるように分割する関数
-def split_chords(chords, max_length=30):
+def split_chords(chords, max_length=50):
     groups = []
     current_group = []
     current_length = 0
@@ -41,23 +41,25 @@ csv_file_name = 'songdata.csv'
 data = [['label', 'sentence']]
 
 for i in range(120):
-    with open(r'songs/{}.html'.format(i), 'r', encoding='utf-8') as file:
+    #C:\Users\ryo_f\Downloads\ChordFinder-main\ChordFinder-main\songs\0.html
+    with open(r'C:/Users/ryo_f/Downloads/ChordFinder-main/ChordFinder-main/songs/{}.html'.format(i), 'r', encoding='utf-8') as file:
         html = file.read()
     bs = BeautifulSoup(html, 'html.parser')
 
     #title = bs.find('h1', class_='title').text
     #artist = bs.find('h2', class_='subtitle').text
     key = bs.find('p', class_='key').text.strip('Key: ')
-    chords = [c.text.strip('|>/--') for c in bs.find_all('span', class_='chord')]
+    chords = [c.text.strip('|>/-↓=') for c in bs.find_all('span', class_='chord')]
     nchords = [re.sub(r'\(.*?\)', ' ', chord) for chord in chords if chord not in [' ', 'N.C.']]
-    nchords = [chord.strip('()↓ ') for chord in nchords if chord.strip()]
+    nchords = [chord.strip('() ') for chord in nchords if chord.strip()]
 
     chord_groups = split_chords(nchords)
     
     # 初めの2つのリストを格納
-    for group in chord_groups:
-        data.append([ntn(key), group])
-
+    for group in chord_groups[:3]:
+        joined_chords = ' '.join(group)
+        data.append([ntn(key), joined_chords])
+        
 # CSVファイルにデータを書き込む
 with open(csv_file_name, 'w', newline='', encoding='utf-8') as csv_file:
     writer = csv.writer(csv_file)
